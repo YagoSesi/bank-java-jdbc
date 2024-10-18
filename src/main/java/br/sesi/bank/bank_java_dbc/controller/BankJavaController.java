@@ -5,7 +5,6 @@ import br.sesi.bank.bank_java_dbc.domain.conta.DadosAberturaConta;
 import br.sesi.bank.bank_java_dbc.exceptions.RegraDeNegocioException;
 import br.sesi.bank.bank_java_dbc.service.ContaService;
 
-import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -34,7 +33,7 @@ public class BankJavaController {
                         listarContas();
                         break;
                     case 2:
-                        abrirConta();
+    2                    abrirConta();
                         break;
                     case 3:
                         encerrarConta();
@@ -47,8 +46,9 @@ public class BankJavaController {
                     case 6:
                         realizarDeposito();
                         break;
-                    case 7:
-                        realizarTranseferencia();
+//                    case 7:
+//                        realizarTranseferencia();
+//                        break;
                 }
             } catch (RegraDeNegocioException e) {
                 System.out.println("Erro" + e.getMessage());
@@ -60,7 +60,7 @@ public class BankJavaController {
         System.out.println("Finalizando a aplicação.");
     }
 
-    public void exibirMenu() {
+    private int exibirMenu() {
         System.out.println("""
                 BYTEBANK - ESCOLHA UMA OPÇÃO
                 1 - Listar contas abertas
@@ -72,6 +72,7 @@ public class BankJavaController {
                 7 - Realizar uma transferência
                 8 - Sair
                 """);
+        return teclado.nextInt();
     }
 
     public void listarContas() {
@@ -151,7 +152,7 @@ public class BankJavaController {
         teclado.next();
     }
 
-    public void realizarTranseferencia() {
+    /*public void realizarTranseferencia() {
         System.out.println("Digite o número da conta de ORIGEM: ");
         int numeroContaOrigem = teclado.nextInt();
         System.out.println("Digite o número da conta de DESTINO: ");
@@ -163,6 +164,6 @@ public class BankJavaController {
         System.out.println("Transferência realizada com sucesso!");
         System.out.println(("Pressione qualquer tecla e dê ENTER para voltar ao menu principal."));
         teclado.next();
-    }
+    }*/
 
 }
