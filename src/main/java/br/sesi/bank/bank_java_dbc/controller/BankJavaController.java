@@ -33,7 +33,7 @@ public class BankJavaController {
                         listarContas();
                         break;
                     case 2:
-    2                    abrirConta();
+                        abrirConta();
                         break;
                     case 3:
                         encerrarConta();
